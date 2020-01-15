@@ -1,0 +1,22 @@
+@import '../../scss/variable.scss';
+
+.btn {
+  width: 210px;
+  outline: none;
+  border-radius: 40px;
+  background: transparent;
+  border: 2px solid $primary;
+  color: $primary;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  font: {
+    // size: 12px;
+    weight: bold;
+  }
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color: $primary-background;
+    background: $primary;
+  }
+}
