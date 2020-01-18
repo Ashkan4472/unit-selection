@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from '../core/services/notification.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly notificationService: NotificationService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  fileUpload(files: File[]) {
+    // TODO: Need to handle file in next page
+    if (files && files.length > 0) {
+      const fileType = files[0].type;
+      if (fileType.indexOf('json') === -1 && fileType.indexOf('csv') === -1) {
+        this.notificationService.danger('file should be in csv or json format.');
+      }
+    }
   }
 
 }
