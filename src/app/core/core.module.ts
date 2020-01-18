@@ -1,10 +1,12 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   imports: [],
   declarations: [],
-  providers: [],
-  exports: [],
+  providers: [
+    NotificationService,
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
