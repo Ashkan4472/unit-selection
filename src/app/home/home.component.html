@@ -3,7 +3,8 @@
     <button class="uk-button uk-button-large btn">صفحه انتخاب</button>
   </div>
   <div class="uk-margin-medium"></div>
-  <div>
-    <button class="uk-button uk-button-large btn">انتخاب فایل</button>
+  <div class="js-upload file-upload-hover" uk-form-custom>
+    <input type="file" (change)="fileUpload($event.target.files)">
+    <button class="uk-button uk-button-large btn" type="button" >انتخاب فایل</button>
   </div>
 </div>
